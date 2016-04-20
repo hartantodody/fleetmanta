@@ -1,0 +1,19 @@
+body{
+    background-color: #FAFAFA;
+}
+#addFleet{
+    position: fixed;
+    bottom: 45px;
+    right: 65px;
+}
+nav .input-field label i{
+    color: #000;
+}
+table.highlight>tbody>tr:hover{
+    background-color: #CFD8DC;
+}
+.text-center{
+    margin-left: auto;
+    margin-right: auto;
+    display: table;
+}

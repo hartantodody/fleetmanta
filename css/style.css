@@ -1,0 +1,32 @@
+html,body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #FAFAFA;
+}
+body{
+    padding-bottom: 64px;
+}
+#googleMap{
+    height: 100%; 
+}
+table.highlight>tbody>tr:hover{
+    background-color: #CFD8DC;
+}
+#buttonTimeline{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+/*.chart{
+    padding: 0 40px 0 40px;
+}*/
+@media only screen and (min-width: 959px){
+    header,main{
+        padding-left: 240px;
+    }
+    .adjust-sidenav{
+        padding-right: 240px;
+    }
+}

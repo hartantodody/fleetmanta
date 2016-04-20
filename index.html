@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!--Import Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="bower_components/Materialize/dist/css/materialize.min.css" media="screen,projection"
+    />
+    <!--Csutom css-->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+    <div class="navbar-fixed">
+        <ul id="dropdown1" class="dropdown-content">
+            <li><a href="#!"><i class="material-icons left">account_box</i> Profile</a></li>
+            <li><a href="#!"><i class="material-icons left">power_settings_new</i>Logout</a></li>
+        </ul>
+        <nav class="blue-grey darken-1">
+            <div class="nav-wrapper">
+                <a href="#!" class="brand-logo center">Fleetmanta</a>
+                <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                <ul class="left hide-on-med-and-down">
+                    <li>
+                        <a href="dashboard.html" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Dashboard"><i class="material-icons left">dashboard</i></a>
+                    </li>
+                    <li>
+                        <a href="reports.html" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Reports"><i class="material-icons left">library_books</i></a>
+                    </li>
+                    <li>
+                        <a href="index.html" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Routeplans"><i class="material-icons left">map</i></a>
+                    </li>
+                    <li>
+                        <a href="fleets.html" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Fleets"><i class="material-icons left">local_shipping</i></a>
+                    </li>
+                    <li>
+                        <a href="locations.html" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Locations"><i class="material-icons left">place</i></a>
+                    </li>
+                </ul>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="#" class="dropdown-button" data-activates="dropdown1"><i class="material-icons left">account_circle</i>John Doe</a></li>
+                </ul>
+                <ul class="side-nav" id="mobile-demo">
+                    <li class="no-padding">
+                        <ul class="collapsible" data-collapsible="accordion">
+                            <li>
+                                <a class="collapsible-header waves-effect waves-teal" href="#!"><i class="material-icons left">dashboard</i>Dashboard <i class="material-icons right">chevron_right</i></a>
+                                <div class="collapsible-body">
+                                    <ul>
+                                        <li><a href="dashboard.html">Overview</a></li>
+                                        <li><a href="#!">Routes</a></li>
+                                        <li><a href="#!">Fleets</a></li>
+                                        <li><a href="#!">Containers</a></li>
+                                        <li><a href="#!">Drivers</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="no-padding">
+                        <ul class="collapsible" data-collapsible="accordion">
+                            <li>
+                                <a class="collapsible-header waves-effect waves-teal" href="#!"><i class="material-icons left">library_books</i>Reports <i class="material-icons right">chevron_right</i></a>
+                                <div class="collapsible-body">
+                                    <ul>
+                                        <li><a href="reports.html">Overview</a></li>
+                                        <li><a href="#!">Routes</a></li>
+                                        <li><a href="#!">Fleets</a></li>
+                                        <li><a href="#!">Containers</a></li>
+                                        <li><a href="#!">Drivers</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="index.html"><i class="material-icons left">map</i> Routeplans</a></li>
+                    <li><a href="fleets.html"><i class="material-icons left">local_shipping</i> Fleets</a></li>
+                    <li><a href="locations.html"><i class="material-icons left">place</i> Locations</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <div id="googleMap"></div>
+    <!-- Modal Trigger -->
+    <a class="waves-effect waves-light btn modal-trigger" href="#modal1" id="buttonTimeline">Open Timeline</a>
+
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal bottom-sheet">
+        <div class="modal-content">
+        <h4>Timeline</h4>
+            <div class="row">
+                <div class="col l12">
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="hide-overflow">
+                                <div id="timeline" height="auto"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Exit</a>
+        </div>
+    </div>
+
+    <!--Google maps API-->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZXB3DMls7nIoTpVeC2PjLy4dQmjPAe0E&callback=initialize"
+        type="text/javascript"></script>
+    <script>
+        function initialize() {
+            var mapProp = {
+                center:new google.maps.LatLng(-7.2286271,112.7208406),
+                zoom:14,
+                mapTypeId:google.maps.MapTypeId.SATELLITE,
+                draggable:true
+            };
+            var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+        }
+    </script>
+
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="bower_components/Materialize/dist/js/materialize.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".button-collapse").sideNav();
+            $('.collapsible').collapsible();
+            
+            $( ".collapsible-header" ).click(function() {
+                if ($(this).find(".material-icons.right").css( "transform" ) == 'none' ){
+                    $(this).find(".material-icons.right").css("transform","rotate(90deg)");
+                } else {
+                    $(this).find(".material-icons.right").css("transform","" );
+                }
+            });
+            $('.modal-trigger').leanModal();
+        })
+    </script>
+</body>
+
+</html>
