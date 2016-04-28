@@ -17,3 +17,6 @@ table.highlight>tbody>tr:hover{
     margin-right: auto;
     display: table;
 }
+nav .input-field input{
+    padding-top: 20px;
+}

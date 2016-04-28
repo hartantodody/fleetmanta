@@ -15,79 +15,121 @@
 </head>
 
 <body>
-    <div class="navbar-fixed">
-        <ul id="dropdown1" class="dropdown-content">
-            <li><a href="#!"><i class="material-icons left">account_box</i> Profile</a></li>
-            <li><a href="#!"><i class="material-icons left">power_settings_new</i>Logout</a></li>
-        </ul>
-        <nav class="blue-grey darken-1">
-            <div class="nav-wrapper">
-                <a href="#!" class="brand-logo center">Fleetmanta</a>
-                <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-                <ul class="left hide-on-med-and-down">
-                    <li>
-                        <a href="dashboard.html" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Dashboard"><i class="material-icons left">dashboard</i></a>
-                    </li>
-                    <li>
-                        <a href="reports.html" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Reports"><i class="material-icons left">library_books</i></a>
-                    </li>
-                    <li>
-                        <a href="index.html" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Routeplans"><i class="material-icons left">map</i></a>
-                    </li>
-                    <li>
-                        <a href="fleets.html" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Fleets"><i class="material-icons left">local_shipping</i></a>
-                    </li>
-                    <li>
-                        <a href="locations.html" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Locations"><i class="material-icons left">place</i></a>
-                    </li>
-                </ul>
-                <ul class="right hide-on-med-and-down">
-                    <li><a href="#" class="dropdown-button" data-activates="dropdown1"><i class="material-icons left">account_circle</i>John Doe</a></li>
-                </ul>
-                <ul class="side-nav" id="mobile-demo">
-                    <li class="no-padding">
-                        <ul class="collapsible" data-collapsible="accordion">
-                            <li>
-                                <a class="collapsible-header waves-effect waves-teal" href="#!"><i class="material-icons left">dashboard</i>Dashboard <i class="material-icons right">chevron_right</i></a>
-                                <div class="collapsible-body">
-                                    <ul>
-                                        <li><a href="dashboard.html">Overview</a></li>
-                                        <li><a href="#!">Routes</a></li>
-                                        <li><a href="#!">Fleets</a></li>
-                                        <li><a href="#!">Containers</a></li>
-                                        <li><a href="#!">Drivers</a></li>
-                                    </ul>
-                                </div>
-                            </li>
+    <header>
+        <div class="navbar-fixed">
+            <ul id="dropdown1" class="dropdown-content">
+                <li><a href="#!"><i class="material-icons left">account_box</i> Profile</a></li>
+                <li><a href="#!"><i class="material-icons left">power_settings_new</i>Logout</a></li>
+            </ul>
+            <nav class="blue-grey darken-1 adjust-sidenav">
+                <div class="nav-wrapper">
+                    <a href="#" class="brand-logo center hide-on-large-only">Fleetmanta</a>
+                    <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                    <ul class="hide-on-med-and-down" id="search">
+                        <li class="col l12">
+                            <form action="get">
+                                <i class="material-icons">search</i>
+                                <input id="first_name2" type="text" class="validate" placeholder="Search">
+                            </form>
+                        </li>
+                    </ul>
+                    <ul class="right hide-on-med-and-down">
+                        <li><a href="#" class="dropdown-button" data-activates="dropdown1"><i class="material-icons left">account_circle</i>John Doe</a></li>
+                    </ul>
+                    <ul class="side-nav" id="mobile-demo">
+                        <li class="no-padding">
+                            <ul class="collapsible" data-collapsible="accordion">
+                                <li>
+                                    <a class="collapsible-header waves-effect waves-teal" href="#!"><i class="material-icons left">dashboard</i>Dashboard <i class="material-icons right">chevron_right</i></a>
+                                    <div class="collapsible-body">
+                                        <ul>
+                                            <li><a href="dashboard.html">Overview</a></li>
+                                            <li><a href="#!">Routes</a></li>
+                                            <li><a href="#!">Fleets</a></li>
+                                            <li><a href="#!">Containers</a></li>
+                                            <li><a href="#!">Drivers</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="no-padding">
+                            <ul class="collapsible" data-collapsible="accordion">
+                                <li>
+                                    <a class="collapsible-header waves-effect waves-teal" href="#!"><i class="material-icons left">library_books</i>Reports <i class="material-icons right">chevron_right</i></a>
+                                    <div class="collapsible-body">
+                                        <ul>
+                                            <li><a href="reports.html">Overview</a></li>
+                                            <li><a href="#!">Routes</a></li>
+                                            <li><a href="#!">Fleets</a></li>
+                                            <li><a href="#!">Containers</a></li>
+                                            <li><a href="#!">Drivers</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a href="index.html"><i class="material-icons left">map</i> Routeplans</a></li>
+                        <li><a href="fleets.html"><i class="material-icons left">local_shipping</i> Fleets</a></li>
+                        <li><a href="locations.html"><i class="material-icons left">place</i> Locations</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div class="navbar-fixed" id="fixed2">
+            <nav id="breadcrumbs" class="blue-grey">
+                <div class="nav-wrapper">
+                    <div class="col s12">
+                        <a href="#!" class="breadcrumb">Dashboard</a>
+                        <a href="#!" class="breadcrumb">Overview</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <ul id="slide-out" class="side-nav fixed blue-grey darken-2 white-text">
+        <li><center><h4>Fleetmanta</h4></center></li>
+        <li class="no-padding">
+            <ul class="collapsible" data-collapsible="accordion">
+                <li>
+                    <a class="collapsible-header waves-effect waves-teal" href="#!"><i class="material-icons left">dashboard</i>Dashboard <i class="material-icons right">chevron_right</i></a>
+                    <div class="collapsible-body blue-grey darken-1">
+                        <ul>
+                            <li><a href="dashboard.html">Overview</a></li>
+                            <li><a href="#!">Routes</a></li>
+                            <li><a href="#!">Fleets</a></li>
+                            <li><a href="#!">Containers</a></li>
+                            <li><a href="#!">Drivers</a></li>
                         </ul>
-                    </li>
-                    <li class="no-padding">
-                        <ul class="collapsible" data-collapsible="accordion">
-                            <li>
-                                <a class="collapsible-header waves-effect waves-teal" href="#!"><i class="material-icons left">library_books</i>Reports <i class="material-icons right">chevron_right</i></a>
-                                <div class="collapsible-body">
-                                    <ul>
-                                        <li><a href="reports.html">Overview</a></li>
-                                        <li><a href="#!">Routes</a></li>
-                                        <li><a href="#!">Fleets</a></li>
-                                        <li><a href="#!">Containers</a></li>
-                                        <li><a href="#!">Drivers</a></li>
-                                    </ul>
-                                </div>
-                            </li>
+                    </div>
+                </li>
+            </ul>
+        </li>
+        <li class="no-padding">
+            <ul class="collapsible" data-collapsible="accordion">
+                <li>
+                    <a class="collapsible-header waves-effect waves-teal" href="#!"><i class="material-icons left">library_books</i>Reports <i class="material-icons right">chevron_right</i></a>
+                    <div class="collapsible-body blue-grey darken-1">
+                        <ul>
+                            <li><a href="reports.html">Overview</a></li>
+                            <li><a href="#!">Routes</a></li>
+                            <li><a href="#!">Fleets</a></li>
+                            <li><a href="#!">Containers</a></li>
+                            <li><a href="#!">Drivers</a></li>
                         </ul>
-                    </li>
-                    <li><a href="index.html"><i class="material-icons left">map</i> Routeplans</a></li>
-                    <li><a href="fleets.html"><i class="material-icons left">local_shipping</i> Fleets</a></li>
-                    <li><a href="locations.html"><i class="material-icons left">place</i> Locations</a></li>
-                </ul>
-            </div>
-        </nav>
-    </div>
+                    </div>
+                </li>
+            </ul>
+        </li>
+        <li class="no-padding"><a href="index.html"><i class="material-icons left">map</i>Routeplans </a></li>
+        <li class="no-padding"><a href="fleets.html"><i class="material-icons left">local_shipping</i>Fleets </a></li>
+        <li class="no-padding"><a href="locations.html"><i class="material-icons left">place</i>Locations </a></li>
+    </ul>
 
     <div id="googleMap"></div>
     <!-- Modal Trigger -->
-    <a class="waves-effect waves-light btn modal-trigger" href="#modal1" id="buttonTimeline">Open Timeline</a>
+    <!-- <a class="waves-effect waves-light btn modal-trigger" href="#modal1" id="buttonTimeline">Open Timeline</a> -->
 
     <!-- Modal Structure -->
     <div id="modal1" class="modal bottom-sheet">
@@ -133,7 +175,7 @@
         $(document).ready(function(){
             $(".button-collapse").sideNav();
             $('.collapsible').collapsible();
-            
+
             $( ".collapsible-header" ).click(function() {
                 if ($(this).find(".material-icons.right").css( "transform" ) == 'none' ){
                     $(this).find(".material-icons.right").css("transform","rotate(90deg)");

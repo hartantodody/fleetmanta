@@ -21,28 +21,24 @@
                 <li><a href="#!"><i class="material-icons left">account_box</i> Profile</a></li>
                 <li><a href="#!"><i class="material-icons left">power_settings_new</i>Logout</a></li>
             </ul>
+            <ul id="dropdown2" class="dropdown-content">
+                <li><a href="#!"><i class="material-icons left">account_box</i> Profile</a></li>
+                <li><a href="#!"><i class="material-icons left">power_settings_new</i>Logout</a></li>
+            </ul>
             <nav class="blue-grey darken-1 adjust-sidenav">
                 <div class="nav-wrapper">
-                    <a href="#!" class="brand-logo center">Fleetmanta</a>
+                    <a href="#" class="brand-logo center hide-on-large-only">Fleetmanta</a>
                     <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-                    <ul class="left hide-on-med-and-down">
-                        <li>
-                            <a href="dashboard.html" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Dashboard"><i class="material-icons left">dashboard</i></a>
-                        </li>
-                        <li>
-                            <a href="reports.html" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Reports"><i class="material-icons left">library_books</i></a>
-                        </li>
-                        <li>
-                            <a href="index.html" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Routeplans"><i class="material-icons left">map</i></a>
-                        </li>
-                        <li>
-                            <a href="fleets.html" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Fleets"><i class="material-icons left">local_shipping</i></a>
-                        </li>
-                        <li>
-                            <a href="locations.html" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Locations"><i class="material-icons left">place</i></a>
+                    <ul class="hide-on-med-and-down" id="search">
+                        <li class="col l12">
+                            <form action="get">
+                                <i class="material-icons">search</i>
+                                <input id="first_name2" type="text" class="validate" placeholder="Search">
+                            </form>
                         </li>
                     </ul>
                     <ul class="right hide-on-med-and-down">
+                        <li><a href="#" class="dropdown-button" data-activates="dropdown2"><i class="material-icons left">chat</i></a></li>
                         <li><a href="#" class="dropdown-button" data-activates="dropdown1"><i class="material-icons left">account_circle</i>John Doe</a></li>
                     </ul>
                     <ul class="side-nav" id="mobile-demo">
@@ -85,15 +81,57 @@
                 </div>
             </nav>
         </div>
+        <div class="navbar-fixed" id="fixed2">
+            <nav id="breadcrumbs" class="blue-grey">
+                <div class="nav-wrapper">
+                    <div class="col s12">
+                        <a href="#!" class="breadcrumb">Dashboard</a>
+                        <a href="#!" class="breadcrumb">Overview</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
     </header>
-    <ul id="slide-out" class="side-nav fixed">
-        <li><center><h4>Dashboard</h4></center></li>
-        <li><a href="#!">Overview</a></li>
-        <li><a href="#!">Routes</a></li>
-        <li><a href="#!">Fleets</a></li>
-        <li><a href="#!">Containers</a></li>
-        <li><a href="#!">Drivers</a></li>
+
+    <ul id="slide-out" class="side-nav fixed blue-grey darken-2 white-text">
+        <li><center><h4>Fleetmanta</h4></center></li>
+        <li class="no-padding">
+            <ul class="collapsible" data-collapsible="accordion">
+                <li>
+                    <a class="collapsible-header waves-effect waves-teal" href="#!"><i class="material-icons left">dashboard</i>Dashboard <i class="material-icons right">chevron_right</i></a>
+                    <div class="collapsible-body blue-grey darken-1">
+                        <ul>
+                            <li><a href="dashboard.html">Overview</a></li>
+                            <li><a href="#!">Routes</a></li>
+                            <li><a href="#!">Fleets</a></li>
+                            <li><a href="#!">Containers</a></li>
+                            <li><a href="#!">Drivers</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </li>
+        <li class="no-padding">
+            <ul class="collapsible" data-collapsible="accordion">
+                <li>
+                    <a class="collapsible-header waves-effect waves-teal" href="#!"><i class="material-icons left">library_books</i>Reports <i class="material-icons right">chevron_right</i></a>
+                    <div class="collapsible-body blue-grey darken-1">
+                        <ul>
+                            <li><a href="reports.html">Overview</a></li>
+                            <li><a href="#!">Routes</a></li>
+                            <li><a href="#!">Fleets</a></li>
+                            <li><a href="#!">Containers</a></li>
+                            <li><a href="#!">Drivers</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </li>
+        <li class="no-padding"><a href="index.html"><i class="material-icons left">map</i>Routeplans </a></li>
+        <li class="no-padding"><a href="fleets.html"><i class="material-icons left">local_shipping</i>Fleets </a></li>
+        <li class="no-padding"><a href="locations.html"><i class="material-icons left">place</i>Locations </a></li>
     </ul>
+
     <main>
         <div class="row">
             <!--Doughnut chart-->
@@ -205,6 +243,7 @@
             </div>
         </div>
     </main>
+
     <!--Import jQuery before materialize.js-->
     <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="bower_components/Materialize/dist/js/materialize.min.js"></script>
@@ -226,7 +265,7 @@
     <script>
         // Get the context of the canvas element we want to select
         Chart.defaults.global.responsive = true;
-        
+
         // Datasets
         var dataDoughnut = [
             {
@@ -248,7 +287,7 @@
                 label: "Yellow"
             }
         ]
-        
+
         var dataBar = {
             labels: ["January", "February", "March", "April", "May", "June", "July"],
             datasets: [
@@ -270,12 +309,12 @@
                 }
             ]
         };
-        
+
         var dataRadar = {
             labels: ["Eating", "Drinking", "Sleeping", "Designing", "Coding", "Cycling", "Running"],
             datasets: dataBar.datasets
         };
-        
+
         var dataPolar = [
             {
                 value: 300,
@@ -308,33 +347,33 @@
                 label: "Dark Grey"
             }
         ];
-        
+
         // Initialize the chart into HTML page
         var ctxDough = document.getElementById("doughnutChart").getContext("2d");
         var myNewChart = new Chart(ctxDough).Doughnut(dataDoughnut, {
             animateScale: true
         });
-        
+
         var ctxPie = document.getElementById("pieChart").getContext("2d");
         var myPieChart = new Chart(ctxPie).Pie(dataDoughnut, {
             animateScale: true
         });
-        
+
         var ctxBar = document.getElementById("barChart").getContext("2d");
         var myBarChart = new Chart(ctxBar).Bar(dataBar, {
             animateScale: true
         });
-        
+
         var ctxLine = document.getElementById("lineChart").getContext("2d");
         var myBarChart = new Chart(ctxLine).Line(dataBar, {
             animateScale: true
         });
-        
+
         var ctxRadar = document.getElementById("radarChart").getContext("2d");
         var myBarChart = new Chart(ctxRadar).Radar(dataRadar, {
             animateScale: true
         });
-        
+
         var ctxPolar = document.getElementById("polarChart").getContext("2d");
         var myBarChart = new Chart(ctxPolar).PolarArea(dataPolar, {
             animateScale: true
