@@ -5,8 +5,7 @@
     <!--Import Google Icon Font-->
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="bower_components/Materialize/dist/css/materialize.min.css" media="screen,projection"
-    />
+    <link type="text/css" rel="stylesheet" href="bower_components/Materialize/dist/css/materialize.min.css" media="screen,projection"/>
     <!--Csutom css-->
     <link rel="stylesheet" href="css/style.css">
 
@@ -78,12 +77,18 @@
         </div>
         <div class="navbar-fixed" id="fixed2">
             <nav id="breadcrumbs" class="blue-grey">
-                <div class="nav-wrapper">
-                    <div class="col s12">
-                        <a href="#!" class="breadcrumb">Dashboard</a>
-                        <a href="#!" class="breadcrumb">Overview</a>
-                    </div>
-                </div>
+                <div class="nav-wrapper adjust-sidenav">
+                    <a href="#!" class="breadcrumb">Dashboard</a>
+                    <a href="#!" class="breadcrumb">Overview</a>
+                    <ul class="right">
+                        <li>
+                            <form action="get">
+                                <input id="date" type="date" class="datepicker" placeholder="Date">
+                            </form>
+                        </li>
+                        <li><a class="waves-effect waves-light btn" id="toggleMap">Hide Map</a></li>
+                    </ul>
+                </div
             </nav>
         </div>
     </header>
@@ -127,7 +132,93 @@
         <li class="no-padding"><a href="locations.html"><i class="material-icons left">place</i>Locations </a></li>
     </ul>
 
-    <div id="googleMap"></div>
+    <main>
+        <div class="blue-grey darken-3 white-text" id="routes">
+            <div id="menu">
+                <h4>Tasks <a class='dropdown-button btn right' href='#' data-activates='dropdown2'><i class="material-icons">settings</i></a></h4>
+                <ul id='dropdown2' class='dropdown-content'>
+                    <li><a href="#!">one</a></li>
+                    <li><a href="#!">two</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#!">three</a></li>
+                </ul>
+                <a class="modal-trigger waves-effect waves-light btn red" href="#modal1">New Task</a>
+                <a class="waves-effect waves-light btn">Optimize</a>
+                <div class="collection blue-grey darken-4">
+                    <a href="#!" class="collection-item">Alan<span class="badge">1</span></a>
+                </div>
+            </div>
+        </div>
+        <div id="googleMap"></div>
+    </main>
+
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal modal-fixed-footer">
+        <div class="modal-content">
+            <center><h4>New Task - T001</h4></center>
+            <form action="post">
+                <div class="row">
+                    <div class="col s12">
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <select>
+                                    <option value="" disabled selected>Pick up trucks</option>
+                                    <option value="1">Option 1</option>
+                                    <option value="2">Option 2</option>
+                                    <option value="3">Option 3</option>
+                                </select>
+                            </div>
+                            <div class="input-field col m6">
+                                <input type="number" id="loadAmount">
+                                <label for="loadAmount">Load Amount</label>
+                            </div>
+                            <div class="input-field col m6">
+                                <select>
+                                    <option value="" disabled selected>Unit</option>
+                                    <option value="1">Option 1</option>
+                                    <option value="2">Option 2</option>
+                                    <option value="3">Option 3</option>
+                                </select>
+                            </div>
+                            <div class="input-field col m6">
+                                <select>
+                                    <option value="" disabled selected>Pick up location</option>
+                                    <option value="1">Option 1</option>
+                                    <option value="2">Option 2</option>
+                                    <option value="3">Option 3</option>
+                                </select>
+                            </div>
+                            <div class="input-field col m6">
+                                <select>
+                                    <option value="" disabled selected>Delivery location</option>
+                                    <option value="1">Option 1</option>
+                                    <option value="2">Option 2</option>
+                                    <option value="3">Option 3</option>
+                                </select>
+                            </div>
+                            <div class="input-field col m6">
+                                <select>
+                                    <option value="" disabled selected>Departure Time</option>
+                                    <option value="1">Option 1</option>
+                                    <option value="2">Option 2</option>
+                                    <option value="3">Option 3</option>
+                                </select>
+                            </div>
+                            <div class="input-field col m6">
+                                <input type="date" class="datepicker" placeholder="Departure Date">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <div class="text-center">
+                <a href="#!" class=" modal-action modal-close waves-effect waves-green btn"><i class="material-icons left">add_circle</i>Add new task</a>
+            </div>
+        </div>
+    </div>
+
     <!-- Modal Trigger -->
     <!-- <a class="waves-effect waves-light btn modal-trigger" href="#modal1" id="buttonTimeline">Open Timeline</a> -->
 
@@ -157,15 +248,21 @@
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZXB3DMls7nIoTpVeC2PjLy4dQmjPAe0E&callback=initialize"
         type="text/javascript"></script>
     <script>
+        //initialize google maps
         function initialize() {
+
+            //map prpoerty set to PELINDO and TPKS locations
             var mapProp = {
-                center:new google.maps.LatLng(-7.2286271,112.7208406),
+                center:new google.maps.LatLng(-7.207069000596542, 112.72695779800415),
                 zoom:14,
-                mapTypeId:google.maps.MapTypeId.SATELLITE,
+                mapTypeId:google.maps.MapTypeId.HYBRID,
                 draggable:true
             };
+
+            //initialize google maps
             var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
         }
+
     </script>
 
     <!--Import jQuery before materialize.js-->
@@ -184,7 +281,21 @@
                 }
             });
             $('.modal-trigger').leanModal();
-        })
+
+            $('#toggleMap').click(function() {
+                $('#routes').toggleClass("expand adjust-sidenav");
+            });
+            $('.datepicker').pickadate({
+                selectMonths: true, // Creates a dropdown to control month
+                selectYears: 15 // Creates a dropdown of 15 years to control year
+            });
+            $('select').material_select();
+            $('.dropdown-button').dropdown({
+                belowOrigin: true, // Displays dropdown below the button
+                alignment: 'right' // Displays dropdown with edge aligned to the left of button
+            }
+        );
+        });
     </script>
 </body>
 
