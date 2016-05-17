@@ -1,0 +1,10 @@
+start transaction
+
+/*select autoincrement*/
+SELECT `AUTO_INCREMENT` INTO @tripsid 
+FROM INFORMATION_SCHEMA.TABLES 
+WHERE TABLE_SCHEMA = 'mydb' 
+AND TABLE_NAME = 'trips';
+
+
+COMMIT;

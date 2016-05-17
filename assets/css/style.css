@@ -1,0 +1,135 @@
+html,body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #FAFAFA;
+}
+main{
+    height: 100%;
+}
+.text-center{
+    margin-left: auto;
+    margin-right: auto;
+    display: table;
+}
+#menu{
+    margin: 20px;
+    position: relative;
+}
+#menu .btn{
+    margin-bottom: 10px;
+}
+#routes{
+    height: 100%;
+    position: fixed;
+    z-index: 4;
+    width: 300px;
+    -webkit-transition: width .5s ease-in-out;
+    -o-transition: width .5s ease-in-out;
+    transition: width .5s ease-in-out;
+    overflow: scroll;
+}
+#routes .btn{
+    width: 100%;
+}
+#routes .dropdown-button{
+    width: auto;
+}
+.expand{
+    width: 100% !important;
+    -webkit-transition: width .5s ease-in-out;
+    -o-transition: width .5s ease-in-out;
+    transition: width .5s ease-in-out;
+}
+
+body{
+    padding-bottom: 64px;
+}
+#googleMap{
+    height: 100%;
+}
+table.highlight>tbody>tr:hover{
+    background-color: #CFD8DC;
+}
+#buttonTimeline{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+/*.chart{
+    padding: 0 40px 0 40px;
+}*/
+
+#search{
+    padding-left: 20px;
+}
+
+#search input{
+    width: 200px;
+    position: relative;
+    top: -10px;
+}
+
+#search input:focus{
+    width:400px;
+}
+
+.side-nav.fixed a{
+    color: white;
+}
+
+.side-nav.fixed{
+    width: 260px;
+}
+
+.material-icons{
+    line-height: inherit;
+}
+
+nav .nav-wrapper i{
+    height: 56px;
+    display: inline;
+}
+
+#breadcrumbs{
+    padding-left: 25px;
+}
+
+#fixed2{
+    z-index: 5;
+}
+
+@media only screen and (min-width: 959px){
+    header,main{
+        padding-left: 260px;
+    }
+    .adjust-sidenav{
+        padding-right: 260px;
+    }
+}
+
+.info{
+    position: relative;
+    bottom: 20px;
+    transform: translate(-50%,-50%);
+    background-color: #fff;
+    padding: 20px;
+}
+
+::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #455a64;
+}
+
+::-webkit-scrollbar
+{
+	width: 6px;
+	background-color: #455a64;
+}
+
+::-webkit-scrollbar-thumb
+{
+	background-color: #1de9b6;
+}
