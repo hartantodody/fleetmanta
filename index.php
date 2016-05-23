@@ -50,21 +50,21 @@
                             <label for="loadAmount">Load Amount</label>
                         </div>
                         <div class="input-field col m6">
-                            <select name="origin">
+                            <select name="origin" id="origin">
                                 <option value="" disabled selected>Pick up location</option>
                                 <?php
                                 foreach ($stops->array as $stop) {
-                                    echo "<option value='{$stop['idstop']} {$stop['locationname']}'>{$stop['locationname']}</option>";
+                                    echo "<option value='{$stop['idstop']} {$stop['locationname']} {$stop['lat']} {$stop['lang']}'>{$stop['locationname']}</option>";
                                 }
                                 ?>
                             </select>
                         </div>
                         <div class="input-field col m6">
-                            <select name="destination">
+                            <select name="destination" id="dest">
                                 <option value="" disabled selected>Delivery location</option>
                                 <?php
                                 foreach ($stops->array as $stop) {
-                                    echo "<option value='{$stop['idstop']} {$stop['locationname']}'>{$stop['locationname']}</option>";
+                                    echo "<option value='{$stop['idstop']} {$stop['locationname']} {$stop['lat']} {$stop['lang']}'>{$stop['locationname']}</option>";
                                 }
                                 ?>
                             </select>
@@ -117,6 +117,19 @@ function initialize() {
     // Instantiate a directions service.
     var directionsService = new google.maps.DirectionsService;
 
+    var arrayOri = document.getElementById('origin').value.split(" ");
+    var arrayDest = document.getElementById('dest').value.split(" ");
+
+    var orilat = arrayOri[2];
+    var orilang = arrayOri[3];
+    var destlat = arrayDest[2];
+    var destlang = arrayDest[3];
+
+    var onChangeHandler = function () {
+        storeDistance(orilat,orilang,destlat,destlang);
+    };
+    document.getElementById('origin').addEventListener('change', onChangeHandler);
+    document.getElementById('dest').addEventListener('change', onChangeHandler);
     //map prpoerty set to PELINDO and TPKS locations
     var mapProp = {
         center:new google.maps.LatLng(-7.207069000596542, 112.72695779800415),

@@ -5,7 +5,7 @@
             <div class="col s12">
                 <div class="card">
                     <div class="card-content blue-grey darken-1">
-                        <span class="card-title white-text">Annual Reports</span>
+                        <span class="card-title white-text">Scheduling Reports</span>
                     </div>
                     <div class="card-content">
                         <table class="striped highlight">
@@ -15,6 +15,7 @@
                                     <th data-field="name">Name</th>
                                     <th data-field="desc">Description</th>
                                     <th data-field="time">Created At</th>
+                                    <th data-field="time">Action</th>
                                 </tr>
                             </thead>
 
@@ -27,6 +28,7 @@
                                             <td>{$report['name']}</td>
                                             <td>{$report['description']}</td>
                                             <td>{$report['created_at']}</td>
+                                            <td><a class='waves-effect waves-light btn' href='reports_details.php?reportid={$report['reportid']}'>View</a></td>
                                         </tr>
                                         ";
                                     }

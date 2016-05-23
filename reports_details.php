@@ -6,7 +6,6 @@ if (!isset($reportid)) {
     die();
 }
 include('includes/header.php');
-include('Functions/select_reports_details.php')
 ?>
     <main>
         <div class="row">
@@ -16,7 +15,36 @@ include('Functions/select_reports_details.php')
                         <span class="card-title white-text">R-00<?php echo $reportid; ?></span>
                     </div>
                     <div class="card-content">
-                        
+                        <table class="striped highlight">
+                            <thead>
+                                <tr>
+                                    <th data-field="desc">Routes</th>
+                                    <th data-field="idorder">ID. Order</th>
+                                    <th data-field="qty">Load</th>
+                                    <th data-field="dist">Distance</th>
+                                    <th data-field="dist">Trucks</th>
+                                    <th data-field="dist">Cost</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <?php
+                                include('Functions/select_reports_details.php');
+                                    foreach ($orders->array as $order) {
+                                        echo "
+                                        <tr>
+                                            <td>{$order['description']}</td>
+                                            <td>OR-TS-00{$order['orderid']}</td>
+                                            <td>{$order['quantity']}</td>
+                                            <td>{$order['distance_in_m']} m</td>
+                                            <td>TR-001</td>
+                                            <td>Rp 3657</td>
+                                        </tr>
+                                        ";
+                                    }
+                                ?>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
