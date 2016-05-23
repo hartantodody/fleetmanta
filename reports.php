@@ -1,4 +1,5 @@
 <?php include('includes/header.php'); ?>
+<?php include('Functions/select_reports.php'); ?>
     <main>
         <div class="row">
             <div class="col s12">
@@ -7,112 +8,30 @@
                         <span class="card-title white-text">Annual Reports</span>
                     </div>
                     <div class="card-content">
-                        <ul id="dropdown2" class="dropdown-content">
-                            <li><a href="#!">Annualy</a></li>
-                            <li><a href="#!">Monthly</a></li>
-                            <li><a href="#!">Weekly</a></li>
-                        </ul>
-                        <a class="waves-effect waves-light btn-flat dropdown-button" href="#!" data-activates="dropdown2">Show Report</a>
                         <table class="striped highlight">
                             <thead>
                                 <tr>
-                                    <th data-field="id">Name</th>
-                                    <th data-field="name">Item Name</th>
-                                    <th data-field="price">Item Price</th>
+                                    <th data-field="id">ID. Reports</th>
+                                    <th data-field="name">Name</th>
+                                    <th data-field="desc">Description</th>
+                                    <th data-field="time">Created At</th>
                                 </tr>
                             </thead>
 
                             <tbody>
-                                <tr>
-                                    <td>Alvin</td>
-                                    <td>Eclair</td>
-                                    <td>$0.87</td>
-                                </tr>
-                                <tr>
-                                    <td>Alan</td>
-                                    <td>Jellybean</td>
-                                    <td>$3.76</td>
-                                </tr>
-                                <tr>
-                                    <td>Jonathan</td>
-                                    <td>Lollipop</td>
-                                    <td>$7.00</td>
-                                </tr>
-                                <tr>
-                                    <td>Jonathan</td>
-                                    <td>Lollipop</td>
-                                    <td>$7.00</td>
-                                </tr>
-                                <tr>
-                                    <td>Jonathan</td>
-                                    <td>Lollipop</td>
-                                    <td>$7.00</td>
-                                </tr>
-                                <tr>
-                                    <td>Jonathan</td>
-                                    <td>Lollipop</td>
-                                    <td>$7.00</td>
-                                </tr>
-                                <tr>
-                                    <td>Jonathan</td>
-                                    <td>Lollipop</td>
-                                    <td>$7.00</td>
-                                </tr>
-                                <tr>
-                                    <td>Jonathan</td>
-                                    <td>Lollipop</td>
-                                    <td>$7.00</td>
-                                </tr>
-                                <tr>
-                                    <td>Jonathan</td>
-                                    <td>Lollipop</td>
-                                    <td>$7.00</td>
-                                </tr>
-                                <tr>
-                                    <td>Jonathan</td>
-                                    <td>Lollipop</td>
-                                    <td>$7.00</td>
-                                </tr>
-                                <tr>
-                                    <td>Jonathan</td>
-                                    <td>Lollipop</td>
-                                    <td>$7.00</td>
-                                </tr>
-                                <tr>
-                                    <td>Jonathan</td>
-                                    <td>Lollipop</td>
-                                    <td>$7.00</td>
-                                </tr>
-                                <tr>
-                                    <td>Jonathan</td>
-                                    <td>Lollipop</td>
-                                    <td>$7.00</td>
-                                </tr>
-                                <tr>
-                                    <td>Jonathan</td>
-                                    <td>Lollipop</td>
-                                    <td>$7.00</td>
-                                </tr>
-                                <tr>
-                                    <td>Jonathan</td>
-                                    <td>Lollipop</td>
-                                    <td>$7.00</td>
-                                </tr>
-                                <tr>
-                                    <td>Jonathan</td>
-                                    <td>Lollipop</td>
-                                    <td>$7.00</td>
-                                </tr>
-                                <tr>
-                                    <td>Jonathan</td>
-                                    <td>Lollipop</td>
-                                    <td>$7.00</td>
-                                </tr>
-                                <tr>
-                                    <td>Jonathan</td>
-                                    <td>Lollipop</td>
-                                    <td>$7.00</td>
-                                </tr>
+                                <?php
+                                    foreach ($reports->array as $report) {
+                                        echo "
+                                        <tr>
+                                            <td>R-00{$report['reportid']}</td>
+                                            <td>{$report['name']}</td>
+                                            <td>{$report['description']}</td>
+                                            <td>{$report['created_at']}</td>
+                                        </tr>
+                                        ";
+                                    }
+                                ?>
+
                             </tbody>
                         </table>
                     </div>

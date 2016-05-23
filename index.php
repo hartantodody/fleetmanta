@@ -7,18 +7,18 @@
         <div id="menu">
             <h4>Tasks <a class='dropdown-button btn right' href='#' data-activates='dropdown2'><i class="material-icons">settings</i></a></h4>
             <ul id='dropdown2' class='dropdown-content'>
-                <li><a href="#!">one</a></li>
+                <li><a href="#!">Delete All</a></li>
                 <li><a href="#!">two</a></li>
                 <li class="divider"></li>
                 <li><a href="#!">three</a></li>
             </ul>
             <a class="modal-trigger waves-effect waves-light btn red" href="#modal1">New Task</a>
-            <a class="waves-effect waves-light btn">Optimize</a>
+            <a class="modal-trigger waves-effect waves-light btn" href="#modal2">Optimize</a>
             <div class="collection blue-grey darken-4">
                 <?php
-                    foreach ($tasks as $task) {
-                        echo "<a href='#' class='collection-item'>TS-00{$task['orderid']}<span class='badge'></span></a>";
-                    }
+                foreach ($tasks->array as $task) {
+                    echo "<a href='#' class='collection-item'>TS-00{$task['orderid']}<span class='badge'></span></a>";
+                }
                 ?>
 
             </div>
@@ -72,37 +72,37 @@
                     </div>
                 </div>
             </div>
-    </div>
-    <div class="modal-footer">
-        <div class="text-center">
-            <button type="submit" class=" modal-action modal-close waves-effect waves-green btn"><i class="material-icons left">add_circle</i>Add new task</button>
         </div>
-    </div>
-</form>
+        <div class="modal-footer">
+            <div class="text-center">
+                <button type="submit" class=" modal-action modal-close waves-effect waves-green btn"><i class="material-icons left">add_circle</i>Add new task</button>
+            </div>
+        </div>
+    </form>
 </div>
 
-<!-- Modal Trigger -->
-<!-- <a class="waves-effect waves-light btn modal-trigger" href="#modal1" id="buttonTimeline">Open Timeline</a> -->
-
 <!-- Modal Structure -->
-<div id="modal1" class="modal bottom-sheet">
+<div id="modal2" class="modal modal-fixed-footer">
     <div class="modal-content">
-        <h4>Timeline</h4>
-        <div class="row">
-            <div class="col l12">
-                <div class="card">
-                    <div class="card-content">
-                        <div class="hide-overflow">
-                            <div id="timeline" height="auto"></div>
-                        </div>
-                    </div>
+        <center><h4>Optimize</h4></center>
+        <form action="Functions/insert_report.php" method="post">
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="optimname" type="text" name="optimname">
+                    <label for="optimname">Save Report As</label>
+                </div>
+                <div class="input-field col s12">
+                    <textarea id="optimdesc" name="optimdesc" class="materialize-textarea"></textarea>
+                    <label for="optimdesc">Description</label>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="modal-footer">
-        <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Exit</a>
-    </div>
+        <div class="modal-footer">
+            <div class="text-center">
+                <button type="submit" class=" modal-action modal-close waves-effect waves-green btn"><i class="material-icons left">add_circle</i>Add new task</button>
+            </div>
+        </div>
+    </form>
 </div>
 
 
@@ -206,6 +206,7 @@ $(document).ready(function(){
             $(this).find(".material-icons.right").css("transform","" );
         }
     });
+
     $('.modal-trigger').leanModal();
 
     $('#toggleMap').click(function() {

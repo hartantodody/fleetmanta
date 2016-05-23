@@ -54,11 +54,7 @@
                                     <a class="collapsible-header waves-effect waves-teal" href="#!"><i class="material-icons left">library_books</i>Reports <i class="material-icons right">chevron_right</i></a>
                                     <div class="collapsible-body">
                                         <ul>
-                                            <li><a href="reports.php">Overview</a></li>
-                                            <li><a href="#!">Routes</a></li>
-                                            <li><a href="#!">Fleets</a></li>
-                                            <li><a href="#!">Containers</a></li>
-                                            <li><a href="#!">Drivers</a></li>
+                                            <li><a href="reports.php">Scheduling Reports</a></li>
                                         </ul>
                                     </div>
                                 </li>
@@ -108,11 +104,7 @@
                     <a class="collapsible-header waves-effect waves-teal" href="#!"><i class="material-icons left">library_books</i>Reports <i class="material-icons right">chevron_right</i></a>
                     <div class="collapsible-body blue-grey darken-1">
                         <ul>
-                            <li><a href="reports.php">Overview</a></li>
-                            <li><a href="#!">Routes</a></li>
-                            <li><a href="#!">Fleets</a></li>
-                            <li><a href="#!">Containers</a></li>
-                            <li><a href="#!">Drivers</a></li>
+                            <li><a href="reports.php">Scheduling Reports</a></li>
                         </ul>
                     </div>
                 </li>

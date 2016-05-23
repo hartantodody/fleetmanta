@@ -1,4 +1,5 @@
 <?php include('includes/header.php'); ?>
+<?php include('Functions/require.php'); ?>
 <?php include('Functions/select_goods.php'); ?>
 <main>
     <div class="row">
@@ -6,7 +7,7 @@
 
             <div class="card">
                 <div class="card-content blue-grey darken-1">
-                    <span class="card-title white-text">Fleet List</span>
+                    <span class="card-title white-text">Containers</span>
                 </div>
                 <div class="card-content">
                     <table class="striped highlight">
@@ -24,7 +25,7 @@
                                 foreach ($containers->array as $container) {
                                     echo
                                     "<tr>
-                                            <td>{$container['idcontainers']}</td>
+                                            <td>GOODS-{$container['idcontainers']}</td>
                                             <td>{$container['width']}</td>
                                             <td>{$container['length']}</td>
                                             <td>{$container['height']}</td>

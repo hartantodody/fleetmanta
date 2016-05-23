@@ -25,15 +25,7 @@ COMMIT;
 START TRANSACTION;
 INSERT INTO trips_has_stops VALUE(@tripsid, {$originbreak[0]}, 'origin');
 INSERT INTO trips_has_stops VALUE(@tripsid, {$destbreak[0]}, 'destination');
-INSERT INTO orders VALUE(NULL,{$goods}, {$loadAmount}, @tripsid, NULL, NULL);
-COMMIT;
-
-START TRANSACTION;
-INSERT INTO reports VALUE(NULL, 'Reports for today', NULL, 'new');
-COMMIT;
-
-START TRANSACTION;
-INSERT INTO reports_has_orders VALUE('1', @ordersid);
+INSERT INTO orders VALUE(NULL,{$goods}, {$loadAmount}, @tripsid, NULL, NULL, 'new');
 COMMIT;
 ");
 $insertTask->execTransaction("Berhasil");
